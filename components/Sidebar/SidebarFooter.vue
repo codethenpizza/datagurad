@@ -28,8 +28,7 @@
     },
     watch: {
       isPluginsAllowed(newVal) {
-        console.log(newVal)
-        //store emit
+        this.$store.dispatch('plugins/setAllPlugins', !newVal)
       }
     }
   }

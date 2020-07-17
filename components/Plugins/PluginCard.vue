@@ -1,9 +1,10 @@
 <template>
-    <div class="plugin-card">
+    <div class="plugin-card"  :class="{blocked: blocked}">
       <div class="card-heading">
         <h2>{{plugin.title}}</h2>
         <switcher
           v-model="allowed"
+          :disabled="blocked"
         />
       </div>
       <p>{{plugin.desc}}</p>
@@ -21,6 +22,9 @@
     props: {
       plugin: {
         required: true,
+      },
+      blocked: {
+        type: Boolean
       }
     },
     data() {
@@ -45,6 +49,9 @@
     border: 5px solid #eee;
     border-radius: 10px;
     height: 100%;
+    &.blocked {
+      opacity: 0.6;
+    }
     .card-heading {
       display: flex;
       justify-content: space-between;

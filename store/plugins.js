@@ -41,9 +41,9 @@ export const actions = {
   },
 
   //block all plugins
-  async setAllPlugins({commit}, payload) {
-    const res = await axios.post('/api/blockedState', payload);
-    commit('setBlockedAll', payload);
+  async setAllPlugins({commit}, data) {
+    const res = await axios.post('/api/blockedState', {data});
+    commit('setBlockedAll', data);
   }
 };
 

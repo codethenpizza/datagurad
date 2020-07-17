@@ -9,6 +9,7 @@
       >
         <plugin-card
           :plugin="plugin"
+          :blocked="blockedAll"
         />
       </div>
     </div>
@@ -27,7 +28,8 @@
     },
     computed: {
       ...mapState({
-        plugins: state => state.plugins.plugins
+        plugins: state => state.plugins.plugins,
+        blockedAll: state => state.plugins.blockedAll
       })
     },
     mounted() {

@@ -1,6 +1,6 @@
 <template>
   <div class="tg-list-item">
-    <input class="tgl tgl-light" :id="id" type="checkbox" v-model="isChecked">
+    <input class="tgl tgl-light" :id="id" type="checkbox" v-model="isChecked" :disabled="disabled">
     <label class="tgl-btn" :for="id">
     </label>
     <small v-if="showText">{{tglText}}</small>
@@ -16,6 +16,10 @@
       },
       showText: {
         default: true,
+        type: Boolean
+      },
+      disabled: {
+        default: false,
         type: Boolean
       }
     },
