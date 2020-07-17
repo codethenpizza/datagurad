@@ -1,5 +1,5 @@
 <template>
-    <nuxt-link :to="menuItem.url" class="sidebar-item">
+    <nuxt-link exact :to="menuItem.url" class="sidebar-item">
       <img class="icon" :src="menuItem.icon" alt="menu icon">
       <span>{{menuItem.title}}</span>
     </nuxt-link>
